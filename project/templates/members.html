@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    wiki members
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped" id='data'>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        {% for member in members %}
+            <div class="index_table">
+                <tr>
+                    <td>{{ member.name }}</td>
+                    <td>{{ member.email }}</td>
+                </tr>
+            </div>
+        {% endfor %}
+    </table>
+{% endblock %}

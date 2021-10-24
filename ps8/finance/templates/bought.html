@@ -1,0 +1,33 @@
+{% extends "layout.html"%}
+
+{% block title %}
+
+{% endblock %}
+
+{% block main %}
+
+<table  class="table table-striped">
+    <tr>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Shares</th>
+        <th>Price</th>
+        <th>TOTAL</th>
+    </tr>
+    <tr>
+        <td>{{ symbol }}</td>
+        <td>{{ name }}</td>
+        <td>{{ shares }}</td>
+        <td>${{ price }}</td>
+        <td>{{ total }}<td>
+    </tr>
+    <tr id='last_line'>
+        <td>Cash</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td id="cash">${{cash}} </td>
+    </tr>
+</table>
+
+{% endblock %}

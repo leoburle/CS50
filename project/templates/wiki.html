@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ wiki_name }}
+{% endblock %}
+
+{% block main %}
+    <form action="/redirect_post" method="post" id='buttons'>
+        <button class='btn btn-dark' type='submit'>Post Data</button>
+        <input name='wiki_id' value='{{wiki_id}}' hidden>
+    </form>
+    <form action="/invite" method="post" id='buttons'>
+        <button class='btn btn-dark' type='submit'>Invite Users</button>
+        <input name='wiki_id' value='{{wiki_id}}' hidden>
+    </form>
+    <form action="/members" method="post" id='buttons'>
+        <button class='btn btn-dark' type='submit'>Members</button>
+        <input name='wiki_id' value='{{wiki_id}}' hidden>
+    </form>
+    <br/>
+    <br/>
+    {% if wiki[0] %}
+        <input type="text" class="form-control" id="myInput" onkeyup="searchTags()" placeholder="Search tags..">
+        <br/>
+        <br/>
+        <table class="table table-striped" id='data'>
+            <tr>
+                <th>Tags</th>
+                <th>Title</th>
+            </tr>
+            {% for data in wiki %}
+                <form action="/redirect_posted" method="post">
+                    <div class="index_table">
+                        <tr>
+                            <td>{{ data.tag_name }}</td>
+                            <td>
+                                <button class="btn btn-dark" type="submit">{{ data.wiki_data_name }}</button>
+                            </td>
+                            <input name='data_id' value={{data.data_id}} hidden>
+                        </tr>
+                    </div>
+                </form>
+            {% endfor %}
+        </table>
+    {% else %}
+    <br/>
+    <br/>
+    <p>This wiki has no content yet</p>
+    <img src="static/sad.png" id="image">
+    <br/>
+    <br/>
+    {% endif %}
+    <form action="/{{wiki_id}}" method="post" id='buttons'>
+        <button class='btn btn-dark' type='submit'  name="action" id="leave" value="leave" style='background-color: #8B0000; color: orangef.; border: none'>Leave wiki</button>
+    </form>
+    <form action="/{{wiki_id}}" method="post" id='buttons'>
+        <button class='btn btn-dark' type='submit' name="action" id="delete" value="delete" style='background-color: #8B0000; color: white; border: none'>Delete wiki</button>
+    </form>
+{% endblock %}

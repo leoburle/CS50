@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ wiki_data_name }}
+{% endblock %}
+
+{% block main %}
+   <h3>{{ wiki_data_name }}</h3>
+   <br/>
+   <p>{{ data }}</p>
+   <br/>
+   <br/>
+   <form action="/wiki/{{data_id}}" method="post" id='buttons'>
+        <input name='wiki_id' value='{{wiki_id}}' hidden>
+        <input name='data_id' value='{{data_id}}' hidden>
+        <button class='btn btn-dark' type='submit' style='background-color: #8B0000; color: white; border: none'>Delete</button>
+   </form>
+
+{% endblock %}

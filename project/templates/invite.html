@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Invite users to {{ wiki_name }}
+{% endblock %}
+
+{% block main %}
+    <form action="/invited" method="post" id='buttons'>
+        <input name='wiki_id' value='{{wiki_id}}' hidden>
+        <input name='user_id' value='{{user_id}}' hidden>
+        <input autocomplete="off" autofocus class="form-control" name="email" placeholder="email" type="text">
+        <br/>
+        <br/>
+        <button class='btn btn-dark' type='submit'>Invite</button>
+    </form>
+
+{% endblock %}

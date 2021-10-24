@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    history
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <tr>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Current Price</th>
+            <th>Total</th>
+        </tr>
+        {% for trade in wallet %}
+            <div class="index_table">
+                <tr>
+                    <td>{{ trade.stock }}</td>
+                    <td>{{ trade.shares }}</td>
+                    <td>${{ trade.price }}</td>
+                    <td>${{ trade.total }}</td>
+                </tr>
+            </div>
+        {% endfor %}
+        <tr id='last_line'>
+            <td>CASH</td>
+            <td></td>
+            <td></td>
+            <td id="cash">${{cash}}</td>
+        </tr>
+    </table>
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="eng">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ url_for ('static', filename='styles.css')}}" rel="stylesheet">
+        <title>{{ title }}</title>
+        <script>
+            function search_season()
+            {
+                document.querySelector('#season').value = document.querySelector('#seasons').value;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="sidebar">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a id="{{ home }}" class="nav-link" href="/">Main</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="{{ chuck }}"  class="nav-link" href="/chuck">Chuck Rhoades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="{{ bobby }}" class="nav-link" href="/bobby">Bobby Axelrod</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="{{ wendy }}" class="nav-link" href="/wendy">Wendy Rhoades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="{{ taylor }}" class="nav-link" href="/taylor">Taylor Mason</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="main_content">
+                {% block main_content %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

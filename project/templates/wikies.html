@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    User Wikies
+{% endblock %}
+
+{% block main %}
+    {% if wikies[0] %}
+        <table class="table table-striped">
+            <tr>
+                <th>Title</th>
+                <th>Intro</th>
+            </tr>
+                {% for wiki in wikies %}
+                    <form action="/redirect" method="post">
+                            <div class="index_table">
+                                <tr>
+                                <td name = {{wiki.wiki_name}}>
+                                    <button class="btn btn-dark" type="submit">{{ wiki.wiki_name }}</button>
+                                </td>
+                                <td>{{ wiki.wiki_intro }}</td>
+                                <input name='wiki_id' value={{wiki.wiki_id}} hidden>
+                            </tr>
+                        </div>
+                    </form>
+                {% endfor %}
+        </table>
+    {% else %}
+        <p>You are not a member of any wiki yet.</p>
+        <img src="static/sad.png" id="image">
+    {% endif %}
+{% endblock %}

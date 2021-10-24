@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Pending Requests
+{% endblock %}
+
+{% block main %}
+    {% if requests[0] %}
+        {% for request in requests %}
+            <div id="fb">
+                <div id="fb-top">
+                    <p><b>Join Wiki Requests</b>
+                </div>
+                <p id="info"><b><a>Join {{ request.wiki_name }}</a></b> <br> <span>Invited by:{{ request.requester }}</p>
+                <form action="/pending_requests" method="post" id="button-block">
+                    <button class='btn btn-dark' type="submit" name="request_answer" id="confirm" value="confirm">Confirm</button>
+                    <button class='btn btn-dark' type="submit" name="request_answer" id="delete" value="delete">Delete Request</button>
+                    <input name='wiki_name' value='{{request.wiki_name}}' hidden>
+                    <input name='request_id' value='{{request.request_id}}' hidden>
+                </form>
+            </div>
+            <br/>
+            <br/>
+        {% endfor %}
+    {% else %}
+        <p> You have no pending requests </p>
+    {% endif %}
+{% endblock %}

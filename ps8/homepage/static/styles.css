@@ -1,0 +1,84 @@
+body
+{
+    background-color: black;
+    color: white;
+    text-align: justify;
+}
+
+.wrapper
+{
+    display: flex;
+    position: relative;
+}
+
+.wrapper .sidebar
+{
+    position: fixed;
+    background-color: #131313;
+    text-align: center;
+    color: #cc0000;
+    width: 100px;
+    height: 900px;
+
+}
+
+.wrapper .main_content
+{
+    margin: 10px 10px 10px 105px;
+    background-repeat:repeat;
+    background-image: url("/static/dollar_falling.jpg");
+    height: 600px;
+}
+
+
+input
+{
+    background-color: black;
+    color: white;
+}
+
+#first_word
+{
+    color:red;
+    display: inline;
+}
+
+#fieldset
+{
+    text-align: center;
+}
+
+#image
+{
+    display: block;
+    margin: 0 auto;
+    width:60%;
+}
+
+a
+{
+    color:gray !important;
+}
+
+#selected
+{
+    color: red !important;
+}
+
+#text_seasons
+{
+    text-align: center;
+}
+
+#select_seasons, #seasons, #submit
+{
+    display:inline;
+}
+
+.wrapper .main_content h10,
+.wrapper .main_content p
+{
+    display:inline;
+}
+
+

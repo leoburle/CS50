@@ -1,0 +1,160 @@
+nav .bar
+{
+  background-color:#07102c;
+}
+
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+
+nav .navbar-brand .orange
+{
+    color: orange;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+
+table
+{
+    /* colapse borders */
+    border-collapse: collapse;
+    /* width of the table */
+    width: 100%;
+}
+
+td, th
+{
+    /* border lines */
+    border: 1px solid #dddddd;
+    /* align text on the table */
+    text-align: center;
+    /* add padding to the table*/
+    padding: 8px;
+}
+
+th
+{
+    font-weight: bolder;
+    background-color: white;
+}
+
+
+#last_line
+{
+    background-color: white;
+}
+
+main .index_table
+{
+    display:inline;
+}
+
+/* Inserting tags */
+.bootstrap-tagsinput .tag {
+  background: #7AD7F0;
+  padding: 0 6px;
+  margin-right: 2px;
+  border-radius: 4px;
+}
+
+main #buttons
+{
+    display:inline;
+}
+
+data
+{
+  background-color: lightgrey;
+  width: 300px;
+  border: 2px;
+  padding: 50px;
+  margin: 20px;
+}
+
+#fb{
+  width:500px;
+  border:1px solid gray;
+  border-radius:5px;
+  position:relative;
+  height:160px;
+}
+#fb p{
+  font-family:sans-serif;
+  margin: 0 0 0 10px;
+  line-height:30px;
+}
+#fb-top{
+  background-color:#343a40;
+  color:white;
+  height:30px;
+  width:500px;
+  border-radius:5px 5px 0 0;
+  position:absolute;
+  top:-1px;
+  left:-1px;
+  border:1px solid gray;
+}
+
+#info{
+  position:absolute;
+  left:20px;
+  top:75px;
+}
+
+#info {
+  color:orange;
+  line-height:25px;
+  font-size:18px;
+}
+
+#info span{
+  color:#777;
+  font-size:14px;
+}
+
+#button-block{
+  position:absolute;
+  right:10px;
+  top:85px;
+}
+
+#button-block div{
+  display:inline-block;
+}
+
+#confirm, #delete{
+  padding:7px;
+  border-radius:2px;
+  margin-right:10px;
+  font-family:sans-serif;
+}
+
+#delete{
+  padding:6px;
+  margin-right:0;
+}
+
+#button-block div:hover{
+  opacity:.8;
+  cursor:pointer;
+}

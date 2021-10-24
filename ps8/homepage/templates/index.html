@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block main_content %}
+    <h5 id="first_word">Billions</h5>
+    <p>is an American television drama series created by Brian Koppelman, David Levien, and Andrew Ross Sorkin. The show first aired on Showtime in January 2016, and has so far produced five seasons for a total of 55 episodes. The series is often set in large financial centers, most notably New York and Connecticut. The series tells the story of hedge fund manager Bobby Axelrod (Damian Lewis), as he accumulates wealth and power in the world of high finance. Axelrod's aggressive tactics to secure high returns frequently cross over into the illegal—acts that United States Attorney Chuck Rhoades (Paul Giamatti) attempts to prosecute. A large ensemble secondary cast supports the series story arcs.</p>
+    <br>
+    <img src="static/billions.png" alt="Billions" id="image">
+    <br>
+    <fieldset id="fieldset">
+        <p id='text_seasons'>There are five seasons available on Netflix released between 2016 and 2020. Select a season to see the full episode list.</p>
+        <br>
+        <p id="select_season">Season</p>
+        <select id="seasons" style="background-color: black; color: silver">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <form id="submit" action="https://www.imdb.com/title/tt4270492/episodes?season" method="get">
+            <input hidden name='season' id='season' type="text">
+            <input type="submit" value="go" onclick="search_season();">
+        </form>
+    </fieldset>
+{% endblock %}

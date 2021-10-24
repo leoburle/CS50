@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Post data in {{ wiki_name }}
+{% endblock %}
+
+{% block main %}
+    <form action="/post_data" method="post">
+        <input data-role="tagsinput" name='tags' placeholder='Insert a tag'>
+        <br>
+        <br>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="title" placeholder="Enter a title" type="text">
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="text" rows="3" cols = '80'></textarea>
+        </div>
+        <br>
+        <div class="form-group">
+            <input name='wiki_id' value='{{wiki_id}}' hidden>
+        </div>
+        <button class='btn btn-dark' type='submit'>Post</button>
+    </form>
+{% endblock %}
